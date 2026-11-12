@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá!</title>
+    <style>
+        /* Importa uma fonte moderna e limpa */
+        @import url('https://googleapis.com');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #09090b;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Esferas luminosas animadas no fundo */
+        .glow-orb {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 0;
+            animation: float 8s infinite ease-in-out alternate;
+        }
+
+        .orb-1 {
+            background: #6366f1; /* Indigo */
+            top: 15%;
+            left: 20%;
+        }
+
+        .orb-2 {
+            background: #ec4899; /* Rosa vibrante */
+            bottom: 15%;
+            right: 20%;
+            animation-delay: -4s;
+        }
+
+        /* Cartão principal com efeito vidro (Glassmorphism) */
+        .glass-card {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 6rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 28px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease;
+            cursor: default;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Texto principal com gradiente */
+        h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Animação suave das luzes */
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                transform: translate(40px, -40px) scale(1.15);
+            }
+        }
+
+        /* Adaptação para ecrãs mais pequenos (telemóveis) */
+        @media (max-width: 600px) {
+            .glass-card {
+                padding: 3rem 3.5rem;
+            }
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="glass-card">
+        <h1>Olá.</h1>
+        <p>Bem-vindo ao teu novo site.</p>
+    </div>
+
+</body>
+</html>
